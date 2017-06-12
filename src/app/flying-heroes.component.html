@@ -1,0 +1,9 @@
+new hero:
+<input type="text" #box 
+  (keyup.enter)="addHero(box.value); box.value=''"
+  placeholder="hero name">
+<button (click)="reset()"> Reset </button>
+<button (click)="addHero(box.value)"> add </button>
+<div *ngFor="let hero of (heroes|flyingHeroes)">
+  {{hero.name}} 
+</div>

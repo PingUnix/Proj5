@@ -1,3 +1,17 @@
-<h1>
-  {{title}}
-</h1>
+<p>The hero's birthday is {{ birthday | date:format  |uppercase }}</p>
+<p *ngIf="flag === 1">The hero's name is {{ name | lowercase }}</p>
+<p *ngIf="flag === 0">The hero's name is {{ name | uppercase }}</p>
+
+<button (click)="ToggleLe()" [ngStyle]="{'margin': margin_parm,'color':color_parm}">Toggle Upper & Lower</button>
+
+<br/>
+<input type="text" [(ngModel)] = "power"/>
+<br/>
+<input type="text" [(ngModel)] = "expo"/>
+<p> The number is {{power | exponentialStrength:expo}}</p>
+
+
+<input type="text" [(ngModel)] = "count"/>
+<p> The number is {{count | phonenumber}}</p>
+<app-flying-heroes></app-flying-heroes> 
+<hero-list></hero-list>
